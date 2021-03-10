@@ -88,6 +88,9 @@ struct FinalJeopardyView: View {
                                     .cornerRadius(5)
                                     .onTapGesture {
                                         self.finalJeopardySelected.toggle()
+                                        for team in participantsVM.teams {
+                                            self.trackerVM.editScore(index: team.index, score: team.score)
+                                        }
                                         self.participantsVM.resetScores()
                                         self.trackerVM.writeToFirestore(showNo: self.gamesVM.showNo)
                                         self.gamesVM.reset()
@@ -136,26 +139,25 @@ struct FinalJeopardyView: View {
                                         .font(.title)
                                         .padding(10)
                                         .foregroundColor(Color("Darkened"))
-                                        .background(Color.white)
+                                        .background(Color.white.opacity(self.participantsVM.fjCorrects[team.index] ? 1 : 0.4))
                                         .clipShape(Circle())
                                         .onTapGesture {
-                                            var amount = Int(participantsVM.wagers[i]) ?? 0
                                             if self.participantsVM.toSubtracts[team.index] {
-                                                amount = -amount
-                                                self.participantsVM.editScore(index: team.index, amount: amount)
-                                            } else {
-                                                
+                                                self.participantsVM.addFJIncorrect(index: team.index)
                                             }
+                                            self.participantsVM.addFJCorrect(index: team.index)
                                         }
                                     Image(systemName: "xmark")
                                         .font(.title)
-                                        .foregroundColor(.white)
                                         .padding(10)
                                         .foregroundColor(Color("Darkened"))
-                                        .background(Color.white)
+                                        .background(Color.white.opacity(self.participantsVM.toSubtracts[team.index] ? 1 : 0.4))
                                         .clipShape(Circle())
                                         .onTapGesture {
-                                            self.participantsVM.editScore(index: team.index, amount: (Int(participantsVM.wagers[i]) ?? 0) * -1)
+                                            if self.participantsVM.fjCorrects[team.index] {
+                                                self.participantsVM.addFJCorrect(index: team.index)
+                                            }
+                                            self.participantsVM.addFJIncorrect(index: team.index)
                                         }
                                 }
                             }

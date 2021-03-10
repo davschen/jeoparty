@@ -14,6 +14,8 @@ class ParticipantsViewModel: ObservableObject {
     @Published var questionTicker = 0
     @Published var spokespeople = [String]()
     @Published var toSubtracts = [Bool]()
+    @Published var fjCorrects = [Bool]()
+    @Published var selectedTeam = ""
     
     func addTeam(index: Int, name: String, members: [String], score: Int, color: String) {
         self.teams.append(Team(index: index, name: name, members: members, score: score, color: color))
@@ -21,6 +23,7 @@ class ParticipantsViewModel: ObservableObject {
         self.finalJeopardyAnswers.append("")
         self.spokespeople.append("")
         self.toSubtracts.append(false)
+        self.fjCorrects.append(false)
     }
     
     func editScore(index: Int, amount: Int) {
@@ -58,6 +61,12 @@ class ParticipantsViewModel: ObservableObject {
         }
     }
     
+    func resetCorrects() {
+        for i in 0..<fjCorrects.count {
+            fjCorrects[i] = false
+        }
+    }
+    
     func resetScores() {
         for i in 0..<teams.count {
             teams[i].editScore(amount: -teams[i].score)
@@ -82,6 +91,28 @@ class ParticipantsViewModel: ObservableObject {
                 self.spokespeople[team.index] = team.members[questionTicker % team.members.count]
             }
         }
+    }
+    
+    func addFJCorrect(index: Int) {
+        var amount = Int(self.wagers[index]) ?? 0
+        if self.fjCorrects[index] {
+            amount = -amount
+            self.editScore(index: index, amount: amount)
+        } else {
+            self.editScore(index: index, amount: amount)
+        }
+        self.fjCorrects[index].toggle()
+    }
+    
+    func addFJIncorrect(index: Int) {
+        var amount = Int(self.wagers[index]) ?? 0
+        if self.toSubtracts[index] {
+            self.editScore(index: index, amount: amount)
+        } else {
+            amount = -amount
+            self.editScore(index: index, amount: amount)
+        }
+        self.toSubtracts[index].toggle()
     }
 }
 

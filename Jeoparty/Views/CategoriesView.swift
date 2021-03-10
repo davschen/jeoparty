@@ -14,7 +14,6 @@ struct CategoriesView: View {
     @EnvironmentObject var trackerVM: TrackerViewModel
     @State var answer = ""
     @State var response = ""
-    @State var selectedTeam = ""
     @State var amount = 0
     @State var finalJeopardySelected = false
     @State var finalJeopardyReveal = false
@@ -58,14 +57,14 @@ struct CategoriesView: View {
                     .padding(.horizontal)
                     .frame(maxWidth: .infinity)
                     .frame(height: 80)
-                    .background(RoundedRectangle(cornerRadius: 5).stroke(Color.white, lineWidth: self.selectedTeam == team.name ? 10 : 0))
+                    .background(RoundedRectangle(cornerRadius: 5).stroke(Color.white, lineWidth: self.participantsVM.selectedTeam == team.name ? 10 : 0))
                     .background(ColorMap().getColor(color: team.color))
                     .cornerRadius(5)
                     .onTapGesture {
-                        if self.selectedTeam == team.name {
-                            self.selectedTeam = ""
+                        if self.participantsVM.selectedTeam == team.name {
+                            self.participantsVM.selectedTeam = ""
                         } else {
-                            self.selectedTeam = team.name
+                            self.participantsVM.selectedTeam = team.name
                         }
                     }
                 }
@@ -154,16 +153,16 @@ struct CategoriesView: View {
                 .opacity(allDone ? 0.4 : 1)
                 .opacity(self.finalJeopardySelected ? 0 : 1)
                 if !self.answer.isEmpty {
-                    AnswerView(answer: $answer, response: $response, amount: $amount, selectedTeam: $selectedTeam, nobodyGotItSelected: $nobodyGotItSelected, isDailyDouble: self.isDailyDouble, isTripleStumper: self.isTripleStumper)
+                    AnswerView(answer: $answer, response: $response, amount: $amount, selectedTeam: $participantsVM.selectedTeam, nobodyGotItSelected: $nobodyGotItSelected, isDailyDouble: self.isDailyDouble, isTripleStumper: self.isTripleStumper)
                         .environmentObject(self.participantsVM)
                         .environmentObject(self.gamesVM)
                         .onDisappear {
-                            if !self.selectedTeam.isEmpty
-                                && !self.participantsVM.toSubtracts[self.participantsVM.getIDByName(name: selectedTeam)]
+                            if !self.participantsVM.selectedTeam.isEmpty
+                                && !self.participantsVM.toSubtracts[self.participantsVM.getIDByName(name: participantsVM.selectedTeam)]
                                 && !self.nobodyGotItSelected
                                 && !self.isDailyDouble
                                 && self.participantsVM.teams.count > 0 {
-                                let team_i = getIndex(name: selectedTeam)
+                                let team_i = getIndex(name: participantsVM.selectedTeam)
                                 self.participantsVM.editScore(index: team_i, amount: self.amount)
                             }
                             for team in self.participantsVM.teams {

@@ -16,6 +16,10 @@ class ReportViewModel: ObservableObject {
     @Published var scores: [String:[Int]] = [:]
     @Published var currentGame: Report? = nil
     @Published var selectedID = ""
+    @Published var min: CGFloat = 0
+    @Published var max: CGFloat = 0
+    @Published var xAxis = [Int]()
+    @Published var yAxis = [Int]()
     private var db = Firestore.firestore()
     
     init() {
@@ -39,6 +43,7 @@ class ReportViewModel: ObservableObject {
     }
     
     func getGameInfo(id: String) {
+        self.scores.removeAll()
         let docRef = db.collection("users").document(Auth.auth().currentUser?.uid ?? "hello").collection("games").document(id)
         docRef.addSnapshotListener { (doc, err) in
             if err != nil {
@@ -67,26 +72,55 @@ class ReportViewModel: ObservableObject {
                         }
                         if !id_scores.isEmpty {
                             self.scores.updateValue(id_scores, forKey: id)
-                            print(self.scores)
                         }
+                        self.getMinMax()
                     }
                 }
             }
         }
     }
     
-    func getMinMax() -> (Int, Int) {
-        var min = 0
-        var max = 0
+    func getMinMax() {
+        self.min = 0
+        self.max = 0
         
         for teamScores in scores.values {
-            guard let teamMin = teamScores.min() else { return (0, 0) }
-            guard let teamMax = teamScores.max() else { return (0, 0) }
+            guard let teamMin = teamScores.min() else { return }
+            guard let teamMax = teamScores.max() else { return }
             
-            min = teamMin < min ? teamMin : min
-            max = teamMax > max ? teamMax : max
+            self.min = teamMin < Int(min) ? CGFloat(teamMin) : min
+            self.max = teamMax > Int(max) ? CGFloat(teamMax) : max
         }
-        return (min, max)
+        
+        if let game = currentGame {
+            var xArray = [Int]()
+            var counter = 0
+            while counter <= game.steps {
+                xArray.append(counter)
+                counter += 5
+            }
+            self.xAxis = xArray
+            
+            var yArray = [Int]()
+            var yCounter = (self.min + (self.min.truncatingRemainder(dividingBy: 100))) - (self.min == 0 ? 0 : 100)
+            let roundedMax = self.max - (self.max.truncatingRemainder(dividingBy: 100)) + 100
+            let dist = self.max - self.min
+            while yCounter <= roundedMax {
+                var increment: CGFloat = 500
+                yArray.append(Int(yCounter))
+                if dist > 50000 {
+                    increment = 4000
+                } else if dist > 30000 {
+                    increment = 2000
+                } else if dist > 10000 {
+                    increment = 1500
+                } else if dist > 5000 {
+                    increment = 500
+                }
+                yCounter += increment
+            }
+            self.yAxis = yArray
+        }
     }
 }
 

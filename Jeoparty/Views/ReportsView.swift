@@ -85,48 +85,6 @@ struct ReportsView: View {
 struct AnalysisView: View {
     @EnvironmentObject var reportVM: ReportViewModel
     
-    var min: CGFloat {
-        return CGFloat(reportVM.getMinMax().0)
-    }
-    
-    var max: CGFloat {
-        return CGFloat(reportVM.getMinMax().1)
-    }
-    
-    var xAxis: [Int] {
-        var xArray = [Int]()
-        if let game = reportVM.currentGame {
-            var counter = 0
-            while counter <= game.steps {
-                xArray.append(counter)
-                counter += 5
-            }
-        }
-        return xArray
-    }
-    
-    var yAxis: [Int] {
-        var yArray = [Int]()
-        var counter = (min + (min.truncatingRemainder(dividingBy: 100))) - (min == 0 ? 0 : 100)
-        let roundedMax = max - (max.truncatingRemainder(dividingBy: 100)) + 100
-        let dist = max - min
-        while counter <= roundedMax {
-            var increment: CGFloat = 500
-            yArray.append(Int(counter))
-            if dist > 50000 {
-                increment = 4000
-            } else if dist > 30000 {
-                increment = 2000
-            } else if dist > 10000 {
-                increment = 1500
-            } else if dist > 5000 {
-                increment = 500
-            }
-            counter += increment
-        }
-        return yArray
-    }
-    
     var body: some View {
         ZStack {
             if let game = reportVM.currentGame {
@@ -157,7 +115,7 @@ struct AnalysisView: View {
                     HStack {
                         // y axis
                         VStack {
-                            ForEach(yAxis.reversed(), id: \.self) { yVal in
+                            ForEach(self.reportVM.yAxis.reversed(), id: \.self) { yVal in
                                 Text("\(yVal)")
                                     .font(Font.custom("Avenir Next Bold", size: 10))
                                     .frame(maxHeight: .infinity)
@@ -166,10 +124,10 @@ struct AnalysisView: View {
                             .frame(maxHeight: .infinity)
                         }
                         VStack {
-                            ChartView(min: min, max: max)
+                            ChartView(min: reportVM.min, max: reportVM.max)
                             // x axis
                             HStack {
-                                ForEach(xAxis, id: \.self) { xVal in
+                                ForEach(self.reportVM.xAxis, id: \.self) { xVal in
                                     Text("\(xVal)")
                                         .font(Font.custom("Avenir Next Bold", size: 10))
                                         .frame(maxWidth: .infinity)
