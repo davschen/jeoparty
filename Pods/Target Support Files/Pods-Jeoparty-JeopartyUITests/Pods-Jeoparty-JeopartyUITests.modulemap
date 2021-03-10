@@ -1,0 +1,6 @@
+framework module Pods_Jeoparty_JeopartyUITests {
+  umbrella header "Pods-Jeoparty-JeopartyUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

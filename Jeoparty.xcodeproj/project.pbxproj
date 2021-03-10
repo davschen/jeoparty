@@ -1,0 +1,869 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3FB85E2B17F12FABEEAD9F6D /* Pods_JeopartyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF475DA2CEAF2B860F60D7C /* Pods_JeopartyTests.framework */; };
+		6AE93F3453FE44DAC26C34BF /* Pods_Jeoparty_JeopartyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C53F270C9F301FC69DC0DC /* Pods_Jeoparty_JeopartyUITests.framework */; };
+		8B1C24B125D36E300037B491 /* FinalJeopardyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1C24B025D36E300037B491 /* FinalJeopardyView.swift */; };
+		8B5DB50E25D1F9C300C8F73B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B5DB50D25D1F9C300C8F73B /* GoogleService-Info.plist */; };
+		8B5F1D5425D24A6600057C79 /* GamePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F1D5325D24A6600057C79 /* GamePickerView.swift */; };
+		8B5F1D5925D327D200057C79 /* Jeopardy-theme-song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B5F1D5825D327D100057C79 /* Jeopardy-theme-song.mp3 */; };
+		8B668D3E25CBDE6400092A4B /* JeopartyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B668D3D25CBDE6400092A4B /* JeopartyApp.swift */; };
+		8B668D4025CBDE6400092A4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B668D3F25CBDE6400092A4B /* ContentView.swift */; };
+		8B668D4225CBDE6600092A4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B668D4125CBDE6600092A4B /* Assets.xcassets */; };
+		8B668D4525CBDE6600092A4B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B668D4425CBDE6600092A4B /* Preview Assets.xcassets */; };
+		8B668D4725CBDE6600092A4B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B668D4625CBDE6600092A4B /* Persistence.swift */; };
+		8B668D4A25CBDE6600092A4B /* Jeoparty.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B668D4825CBDE6600092A4B /* Jeoparty.xcdatamodeld */; };
+		8B668D5525CBDE6700092A4B /* JeopartyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B668D5425CBDE6700092A4B /* JeopartyTests.swift */; };
+		8B668D6025CBDE6700092A4B /* JeopartyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B668D5F25CBDE6700092A4B /* JeopartyUITests.swift */; };
+		8B668D7125CBDF4E00092A4B /* GamesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B668D7025CBDF4E00092A4B /* GamesViewModel.swift */; };
+		8B668D7E25CBE44100092A4B /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B668D7D25CBE44100092A4B /* CategoriesView.swift */; };
+		8B668D8825CBE64400092A4B /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B668D8725CBE64400092A4B /* AnswerView.swift */; };
+		8B668D9025CBF05E00092A4B /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B668D8C25CBEF9F00092A4B /* Impact.ttf */; };
+		8B668D9425CBF07000092A4B /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B668D8C25CBEF9F00092A4B /* Impact.ttf */; };
+		8B668D9825CBF07100092A4B /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B668D8C25CBEF9F00092A4B /* Impact.ttf */; };
+		8B668D9D25CBF3BD00092A4B /* ParticipantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B668D9C25CBF3BD00092A4B /* ParticipantsViewModel.swift */; };
+		8B668DA225CBF3F300092A4B /* ParticipantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B668DA125CBF3F300092A4B /* ParticipantsView.swift */; };
+		8B6A3CCF25EA0370002D8F38 /* dailyDouble.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8B6A3CCE25EA036E002D8F38 /* dailyDouble.m4a */; };
+		8B766AE625F4463C00E152FF /* TrackerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B766AE525F4463C00E152FF /* TrackerViewModel.swift */; };
+		8B766AEB25F47D9B00E152FF /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B766AEA25F47D9B00E152FF /* ReportViewModel.swift */; };
+		8B8D930025F5935F00142E7B /* ReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D92FF25F5935F00142E7B /* ReportsView.swift */; };
+		8B8D931E25F641FD00142E7B /* iLineChart in Frameworks */ = {isa = PBXBuildFile; productRef = 8B8D931D25F641FD00142E7B /* iLineChart */; };
+		8B8DBE9825EF0CB40042967F /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8DBE9725EF0CB30042967F /* SignInView.swift */; };
+		F456F8E94F011CB6E43C02D0 /* Pods_Jeoparty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE7241536BE1C1F2FD19B2F /* Pods_Jeoparty.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8B668D5125CBDE6700092A4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B668D3225CBDE6400092A4B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B668D3925CBDE6400092A4B;
+			remoteInfo = Jeoparty;
+		};
+		8B668D5C25CBDE6700092A4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B668D3225CBDE6400092A4B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B668D3925CBDE6400092A4B;
+			remoteInfo = Jeoparty;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		48084E7B5B6EFC7E92B90C9D /* Pods-Jeoparty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeoparty.debug.xcconfig"; path = "Target Support Files/Pods-Jeoparty/Pods-Jeoparty.debug.xcconfig"; sourceTree = "<group>"; };
+		4EE7241536BE1C1F2FD19B2F /* Pods_Jeoparty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jeoparty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5888BD97411B6DE8D8D7676D /* Pods-Jeoparty-JeopartyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeoparty-JeopartyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Jeoparty-JeopartyUITests/Pods-Jeoparty-JeopartyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5BACD0F09694904D374856FE /* Pods-Jeoparty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeoparty.release.xcconfig"; path = "Target Support Files/Pods-Jeoparty/Pods-Jeoparty.release.xcconfig"; sourceTree = "<group>"; };
+		5DF475DA2CEAF2B860F60D7C /* Pods_JeopartyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JeopartyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8397D534950D827C3670DB84 /* Pods-JeopartyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JeopartyTests.debug.xcconfig"; path = "Target Support Files/Pods-JeopartyTests/Pods-JeopartyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8B1C24B025D36E300037B491 /* FinalJeopardyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalJeopardyView.swift; sourceTree = "<group>"; };
+		8B5DB50D25D1F9C300C8F73B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8B5F1D5325D24A6600057C79 /* GamePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePickerView.swift; sourceTree = "<group>"; };
+		8B5F1D5825D327D100057C79 /* Jeopardy-theme-song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Jeopardy-theme-song.mp3"; sourceTree = "<group>"; };
+		8B668D3A25CBDE6400092A4B /* Jeoparty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jeoparty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B668D3D25CBDE6400092A4B /* JeopartyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeopartyApp.swift; sourceTree = "<group>"; };
+		8B668D3F25CBDE6400092A4B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8B668D4125CBDE6600092A4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B668D4425CBDE6600092A4B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8B668D4625CBDE6600092A4B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		8B668D4925CBDE6600092A4B /* Jeoparty.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Jeoparty.xcdatamodel; sourceTree = "<group>"; };
+		8B668D4B25CBDE6600092A4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B668D5025CBDE6700092A4B /* JeopartyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JeopartyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B668D5425CBDE6700092A4B /* JeopartyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeopartyTests.swift; sourceTree = "<group>"; };
+		8B668D5625CBDE6700092A4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B668D5B25CBDE6700092A4B /* JeopartyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JeopartyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B668D5F25CBDE6700092A4B /* JeopartyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeopartyUITests.swift; sourceTree = "<group>"; };
+		8B668D6125CBDE6700092A4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B668D7025CBDF4E00092A4B /* GamesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewModel.swift; sourceTree = "<group>"; };
+		8B668D7D25CBE44100092A4B /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		8B668D8725CBE64400092A4B /* AnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerView.swift; sourceTree = "<group>"; };
+		8B668D8C25CBEF9F00092A4B /* Impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Impact.ttf; path = ../../../../../../../System/Library/Fonts/Supplemental/Impact.ttf; sourceTree = "<group>"; };
+		8B668D9C25CBF3BD00092A4B /* ParticipantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsViewModel.swift; sourceTree = "<group>"; };
+		8B668DA125CBF3F300092A4B /* ParticipantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsView.swift; sourceTree = "<group>"; };
+		8B6A3CCE25EA036E002D8F38 /* dailyDouble.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dailyDouble.m4a; sourceTree = "<group>"; };
+		8B766AE525F4463C00E152FF /* TrackerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewModel.swift; sourceTree = "<group>"; };
+		8B766AEA25F47D9B00E152FF /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
+		8B8D92FF25F5935F00142E7B /* ReportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsView.swift; sourceTree = "<group>"; };
+		8B8DBE9725EF0CB30042967F /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		B7C53F270C9F301FC69DC0DC /* Pods_Jeoparty_JeopartyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jeoparty_JeopartyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9AE052B306C7E179DBF525B /* Pods-Jeoparty-JeopartyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeoparty-JeopartyUITests.release.xcconfig"; path = "Target Support Files/Pods-Jeoparty-JeopartyUITests/Pods-Jeoparty-JeopartyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F6BD8BD287E8ECE63883AA2E /* Pods-JeopartyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JeopartyTests.release.xcconfig"; path = "Target Support Files/Pods-JeopartyTests/Pods-JeopartyTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B668D3725CBDE6400092A4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F456F8E94F011CB6E43C02D0 /* Pods_Jeoparty.framework in Frameworks */,
+				8B8D931E25F641FD00142E7B /* iLineChart in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B668D4D25CBDE6700092A4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FB85E2B17F12FABEEAD9F6D /* Pods_JeopartyTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B668D5825CBDE6700092A4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AE93F3453FE44DAC26C34BF /* Pods_Jeoparty_JeopartyUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		629941502CAA27CA94AA0918 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48084E7B5B6EFC7E92B90C9D /* Pods-Jeoparty.debug.xcconfig */,
+				5BACD0F09694904D374856FE /* Pods-Jeoparty.release.xcconfig */,
+				5888BD97411B6DE8D8D7676D /* Pods-Jeoparty-JeopartyUITests.debug.xcconfig */,
+				C9AE052B306C7E179DBF525B /* Pods-Jeoparty-JeopartyUITests.release.xcconfig */,
+				8397D534950D827C3670DB84 /* Pods-JeopartyTests.debug.xcconfig */,
+				F6BD8BD287E8ECE63883AA2E /* Pods-JeopartyTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		76BD7D2C8998B9B33529397D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4EE7241536BE1C1F2FD19B2F /* Pods_Jeoparty.framework */,
+				B7C53F270C9F301FC69DC0DC /* Pods_Jeoparty_JeopartyUITests.framework */,
+				5DF475DA2CEAF2B860F60D7C /* Pods_JeopartyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8B668D3125CBDE6400092A4B = {
+			isa = PBXGroup;
+			children = (
+				8B6A3CCE25EA036E002D8F38 /* dailyDouble.m4a */,
+				8B5DB50D25D1F9C300C8F73B /* GoogleService-Info.plist */,
+				8B5F1D5825D327D100057C79 /* Jeopardy-theme-song.mp3 */,
+				8B668D3C25CBDE6400092A4B /* Jeoparty */,
+				8B668D5325CBDE6700092A4B /* JeopartyTests */,
+				8B668D5E25CBDE6700092A4B /* JeopartyUITests */,
+				8B668D3B25CBDE6400092A4B /* Products */,
+				629941502CAA27CA94AA0918 /* Pods */,
+				76BD7D2C8998B9B33529397D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8B668D3B25CBDE6400092A4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B668D3A25CBDE6400092A4B /* Jeoparty.app */,
+				8B668D5025CBDE6700092A4B /* JeopartyTests.xctest */,
+				8B668D5B25CBDE6700092A4B /* JeopartyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B668D3C25CBDE6400092A4B /* Jeoparty */ = {
+			isa = PBXGroup;
+			children = (
+				8B668D7525CBDF5200092A4B /* View Models */,
+				8B668D7625CBDF6000092A4B /* Views */,
+				8B668D3D25CBDE6400092A4B /* JeopartyApp.swift */,
+				8B668D3F25CBDE6400092A4B /* ContentView.swift */,
+				8B668D4125CBDE6600092A4B /* Assets.xcassets */,
+				8B668D8C25CBEF9F00092A4B /* Impact.ttf */,
+				8B668D4625CBDE6600092A4B /* Persistence.swift */,
+				8B668D4B25CBDE6600092A4B /* Info.plist */,
+				8B668D4825CBDE6600092A4B /* Jeoparty.xcdatamodeld */,
+				8B668D4325CBDE6600092A4B /* Preview Content */,
+			);
+			path = Jeoparty;
+			sourceTree = "<group>";
+		};
+		8B668D4325CBDE6600092A4B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8B668D4425CBDE6600092A4B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8B668D5325CBDE6700092A4B /* JeopartyTests */ = {
+			isa = PBXGroup;
+			children = (
+				8B668D5425CBDE6700092A4B /* JeopartyTests.swift */,
+				8B668D5625CBDE6700092A4B /* Info.plist */,
+			);
+			path = JeopartyTests;
+			sourceTree = "<group>";
+		};
+		8B668D5E25CBDE6700092A4B /* JeopartyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8B668D5F25CBDE6700092A4B /* JeopartyUITests.swift */,
+				8B668D6125CBDE6700092A4B /* Info.plist */,
+			);
+			path = JeopartyUITests;
+			sourceTree = "<group>";
+		};
+		8B668D7525CBDF5200092A4B /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B668D7025CBDF4E00092A4B /* GamesViewModel.swift */,
+				8B668D9C25CBF3BD00092A4B /* ParticipantsViewModel.swift */,
+				8B766AE525F4463C00E152FF /* TrackerViewModel.swift */,
+				8B766AEA25F47D9B00E152FF /* ReportViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		8B668D7625CBDF6000092A4B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8B668D7D25CBE44100092A4B /* CategoriesView.swift */,
+				8B668D8725CBE64400092A4B /* AnswerView.swift */,
+				8B668DA125CBF3F300092A4B /* ParticipantsView.swift */,
+				8B5F1D5325D24A6600057C79 /* GamePickerView.swift */,
+				8B1C24B025D36E300037B491 /* FinalJeopardyView.swift */,
+				8B8DBE9725EF0CB30042967F /* SignInView.swift */,
+				8B8D92FF25F5935F00142E7B /* ReportsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8B668D3925CBDE6400092A4B /* Jeoparty */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B668D6425CBDE6700092A4B /* Build configuration list for PBXNativeTarget "Jeoparty" */;
+			buildPhases = (
+				4616BC186111C1CE559DAB61 /* [CP] Check Pods Manifest.lock */,
+				8B668D3625CBDE6400092A4B /* Sources */,
+				8B668D3725CBDE6400092A4B /* Frameworks */,
+				8B668D3825CBDE6400092A4B /* Resources */,
+				90E3AEC9D3A7E552D2ABE9C6 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Jeoparty;
+			packageProductDependencies = (
+				8B8D931D25F641FD00142E7B /* iLineChart */,
+			);
+			productName = Jeoparty;
+			productReference = 8B668D3A25CBDE6400092A4B /* Jeoparty.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8B668D4F25CBDE6700092A4B /* JeopartyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B668D6725CBDE6700092A4B /* Build configuration list for PBXNativeTarget "JeopartyTests" */;
+			buildPhases = (
+				73FFD06683CE48C6C663A691 /* [CP] Check Pods Manifest.lock */,
+				8B668D4C25CBDE6700092A4B /* Sources */,
+				8B668D4D25CBDE6700092A4B /* Frameworks */,
+				8B668D4E25CBDE6700092A4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B668D5225CBDE6700092A4B /* PBXTargetDependency */,
+			);
+			name = JeopartyTests;
+			productName = JeopartyTests;
+			productReference = 8B668D5025CBDE6700092A4B /* JeopartyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8B668D5A25CBDE6700092A4B /* JeopartyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B668D6A25CBDE6700092A4B /* Build configuration list for PBXNativeTarget "JeopartyUITests" */;
+			buildPhases = (
+				7874202CA4E9FEB8185F68C1 /* [CP] Check Pods Manifest.lock */,
+				8B668D5725CBDE6700092A4B /* Sources */,
+				8B668D5825CBDE6700092A4B /* Frameworks */,
+				8B668D5925CBDE6700092A4B /* Resources */,
+				EBF565614765F570288EB588 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B668D5D25CBDE6700092A4B /* PBXTargetDependency */,
+			);
+			name = JeopartyUITests;
+			productName = JeopartyUITests;
+			productReference = 8B668D5B25CBDE6700092A4B /* JeopartyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B668D3225CBDE6400092A4B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					8B668D3925CBDE6400092A4B = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					8B668D4F25CBDE6700092A4B = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 8B668D3925CBDE6400092A4B;
+					};
+					8B668D5A25CBDE6700092A4B = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 8B668D3925CBDE6400092A4B;
+					};
+				};
+			};
+			buildConfigurationList = 8B668D3525CBDE6400092A4B /* Build configuration list for PBXProject "Jeoparty" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8B668D3125CBDE6400092A4B;
+			packageReferences = (
+				8B8D931C25F641FC00142E7B /* XCRemoteSwiftPackageReference "iLineChart" */,
+			);
+			productRefGroup = 8B668D3B25CBDE6400092A4B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B668D3925CBDE6400092A4B /* Jeoparty */,
+				8B668D4F25CBDE6700092A4B /* JeopartyTests */,
+				8B668D5A25CBDE6700092A4B /* JeopartyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B668D3825CBDE6400092A4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B668D9025CBF05E00092A4B /* Impact.ttf in Resources */,
+				8B5DB50E25D1F9C300C8F73B /* GoogleService-Info.plist in Resources */,
+				8B668D4525CBDE6600092A4B /* Preview Assets.xcassets in Resources */,
+				8B5F1D5925D327D200057C79 /* Jeopardy-theme-song.mp3 in Resources */,
+				8B668D4225CBDE6600092A4B /* Assets.xcassets in Resources */,
+				8B6A3CCF25EA0370002D8F38 /* dailyDouble.m4a in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B668D4E25CBDE6700092A4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B668D9425CBF07000092A4B /* Impact.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B668D5925CBDE6700092A4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B668D9825CBF07100092A4B /* Impact.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4616BC186111C1CE559DAB61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Jeoparty-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73FFD06683CE48C6C663A691 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JeopartyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7874202CA4E9FEB8185F68C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Jeoparty-JeopartyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90E3AEC9D3A7E552D2ABE9C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jeoparty/Pods-Jeoparty-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jeoparty/Pods-Jeoparty-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jeoparty/Pods-Jeoparty-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBF565614765F570288EB588 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jeoparty-JeopartyUITests/Pods-Jeoparty-JeopartyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jeoparty-JeopartyUITests/Pods-Jeoparty-JeopartyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jeoparty-JeopartyUITests/Pods-Jeoparty-JeopartyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B668D3625CBDE6400092A4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B668D4725CBDE6600092A4B /* Persistence.swift in Sources */,
+				8B8D930025F5935F00142E7B /* ReportsView.swift in Sources */,
+				8B668D9D25CBF3BD00092A4B /* ParticipantsViewModel.swift in Sources */,
+				8B5F1D5425D24A6600057C79 /* GamePickerView.swift in Sources */,
+				8B668D4025CBDE6400092A4B /* ContentView.swift in Sources */,
+				8B668D7E25CBE44100092A4B /* CategoriesView.swift in Sources */,
+				8B668D3E25CBDE6400092A4B /* JeopartyApp.swift in Sources */,
+				8B668D7125CBDF4E00092A4B /* GamesViewModel.swift in Sources */,
+				8B668DA225CBF3F300092A4B /* ParticipantsView.swift in Sources */,
+				8B668D4A25CBDE6600092A4B /* Jeoparty.xcdatamodeld in Sources */,
+				8B766AE625F4463C00E152FF /* TrackerViewModel.swift in Sources */,
+				8B1C24B125D36E300037B491 /* FinalJeopardyView.swift in Sources */,
+				8B668D8825CBE64400092A4B /* AnswerView.swift in Sources */,
+				8B766AEB25F47D9B00E152FF /* ReportViewModel.swift in Sources */,
+				8B8DBE9825EF0CB40042967F /* SignInView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B668D4C25CBDE6700092A4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B668D5525CBDE6700092A4B /* JeopartyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B668D5725CBDE6700092A4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B668D6025CBDE6700092A4B /* JeopartyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8B668D5225CBDE6700092A4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B668D3925CBDE6400092A4B /* Jeoparty */;
+			targetProxy = 8B668D5125CBDE6700092A4B /* PBXContainerItemProxy */;
+		};
+		8B668D5D25CBDE6700092A4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B668D3925CBDE6400092A4B /* Jeoparty */;
+			targetProxy = 8B668D5C25CBDE6700092A4B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8B668D6225CBDE6700092A4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8B668D6325CBDE6700092A4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8B668D6525CBDE6700092A4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48084E7B5B6EFC7E92B90C9D /* Pods-Jeoparty.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Jeoparty/Preview Content\"";
+				DEVELOPMENT_TEAM = 9976LKZKCG;
+				ENABLE_PREVIEWS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
+				INFOPLIST_FILE = Jeoparty/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.jeoparty.jeoparty.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8B668D6625CBDE6700092A4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BACD0F09694904D374856FE /* Pods-Jeoparty.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Jeoparty/Preview Content\"";
+				DEVELOPMENT_TEAM = 9976LKZKCG;
+				ENABLE_PREVIEWS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
+				INFOPLIST_FILE = Jeoparty/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.jeoparty.jeoparty.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8B668D6825CBDE6700092A4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8397D534950D827C3670DB84 /* Pods-JeopartyTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9976LKZKCG;
+				INFOPLIST_FILE = JeopartyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.JeopartyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jeoparty.app/Jeoparty";
+			};
+			name = Debug;
+		};
+		8B668D6925CBDE6700092A4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6BD8BD287E8ECE63883AA2E /* Pods-JeopartyTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9976LKZKCG;
+				INFOPLIST_FILE = JeopartyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.JeopartyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jeoparty.app/Jeoparty";
+			};
+			name = Release;
+		};
+		8B668D6B25CBDE6700092A4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5888BD97411B6DE8D8D7676D /* Pods-Jeoparty-JeopartyUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9976LKZKCG;
+				INFOPLIST_FILE = JeopartyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.JeopartyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Jeoparty;
+			};
+			name = Debug;
+		};
+		8B668D6C25CBDE6700092A4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9AE052B306C7E179DBF525B /* Pods-Jeoparty-JeopartyUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9976LKZKCG;
+				INFOPLIST_FILE = JeopartyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.JeopartyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Jeoparty;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B668D3525CBDE6400092A4B /* Build configuration list for PBXProject "Jeoparty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B668D6225CBDE6700092A4B /* Debug */,
+				8B668D6325CBDE6700092A4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B668D6425CBDE6700092A4B /* Build configuration list for PBXNativeTarget "Jeoparty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B668D6525CBDE6700092A4B /* Debug */,
+				8B668D6625CBDE6700092A4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B668D6725CBDE6700092A4B /* Build configuration list for PBXNativeTarget "JeopartyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B668D6825CBDE6700092A4B /* Debug */,
+				8B668D6925CBDE6700092A4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B668D6A25CBDE6700092A4B /* Build configuration list for PBXNativeTarget "JeopartyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B668D6B25CBDE6700092A4B /* Debug */,
+				8B668D6C25CBDE6700092A4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8B8D931C25F641FC00142E7B /* XCRemoteSwiftPackageReference "iLineChart" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AlexFine/iLineChart.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B8D931D25F641FD00142E7B /* iLineChart */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B8D931C25F641FC00142E7B /* XCRemoteSwiftPackageReference "iLineChart" */;
+			productName = iLineChart;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		8B668D4825CBDE6600092A4B /* Jeoparty.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8B668D4925CBDE6600092A4B /* Jeoparty.xcdatamodel */,
+			);
+			currentVersion = 8B668D4925CBDE6600092A4B /* Jeoparty.xcdatamodel */;
+			path = Jeoparty.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8B668D3225CBDE6400092A4B /* Project object */;
+}
