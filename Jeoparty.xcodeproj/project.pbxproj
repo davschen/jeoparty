@@ -230,10 +230,10 @@
 		8B668D7625CBDF6000092A4B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8B5F1D5325D24A6600057C79 /* GamePickerView.swift */,
+				8B668DA125CBF3F300092A4B /* ParticipantsView.swift */,
 				8B668D7D25CBE44100092A4B /* CategoriesView.swift */,
 				8B668D8725CBE64400092A4B /* AnswerView.swift */,
-				8B668DA125CBF3F300092A4B /* ParticipantsView.swift */,
-				8B5F1D5325D24A6600057C79 /* GamePickerView.swift */,
 				8B1C24B025D36E300037B491 /* FinalJeopardyView.swift */,
 				8B8DBE9725EF0CB30042967F /* SignInView.swift */,
 				8B8D92FF25F5935F00142E7B /* ReportsView.swift */,

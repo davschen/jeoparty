@@ -113,7 +113,7 @@ class ReportViewModel: ObservableObject {
                 } else if dist > 30000 {
                     increment = 2000
                 } else if dist > 10000 {
-                    increment = 1500
+                    increment = 1000
                 } else if dist > 5000 {
                     increment = 500
                 }

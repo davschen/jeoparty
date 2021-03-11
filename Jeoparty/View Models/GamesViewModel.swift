@@ -79,7 +79,7 @@ class GamesViewModel: ObservableObject {
             guard let data = snap?.documents else { return }
             
             data.forEach { (doc) in
-                self.seasons.append(doc.documentID)
+                self.seasons.append(String(doc.get("id") as! Int))
             }
         }
     }

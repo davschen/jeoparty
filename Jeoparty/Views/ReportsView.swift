@@ -58,7 +58,7 @@ struct ReportsView: View {
                             }
                         }
                     }
-                    .frame(width: UIScreen.main.bounds.width * 0.25)
+                    .frame(width: UIScreen.main.bounds.width * 0.3)
                 }
                 Rectangle()
                     .frame(width: 1)

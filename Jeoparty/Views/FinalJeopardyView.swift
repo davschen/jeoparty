@@ -88,11 +88,13 @@ struct FinalJeopardyView: View {
                                     .cornerRadius(5)
                                     .onTapGesture {
                                         self.finalJeopardySelected.toggle()
-                                        for team in participantsVM.teams {
+                                        print(trackerVM.scores)
+                                        for team in self.participantsVM.teams {
                                             self.trackerVM.editScore(index: team.index, score: team.score)
                                         }
-                                        self.participantsVM.resetScores()
+                                        print(trackerVM.scores)
                                         self.trackerVM.writeToFirestore(showNo: self.gamesVM.showNo)
+                                        self.participantsVM.resetScores()
                                         self.gamesVM.reset()
                                     }
                             }
@@ -171,6 +173,8 @@ struct FinalJeopardyView: View {
             .padding(.horizontal)
             .onAppear {
                 synthesizer.speak(utterance)
+                self.trackerVM.progressGame()
+                // self.trackerVM.incrementStep()
             }
         }
         .padding(20)

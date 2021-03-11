@@ -19,22 +19,25 @@ struct GamePickerView: View {
     @State var episodeNumber = 0
     @State var audioPlayer: AVAudioPlayer!
     
+    private var episodeColumnGrid = [
+        GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()),
+        GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()),
+    ]
+    
     var body: some View {
         ZStack (alignment: .topLeading) {
             Color("MainBG")
                 .edgesIgnoringSafeArea(.all)
-            ScrollView (.vertical) {
+            HStack {
                 VStack (alignment: .leading) {
                     Text("Seasons")
-                        .font(Font.custom("Avenir Next Bold", size: 50))
-                        .padding(.horizontal)
-                    let seasonColumnGrid = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
-                    
-                    LazyVGrid(columns: seasonColumnGrid) {
+                        .font(Font.custom("Avenir Next Bold", size: 40))
+                        .foregroundColor(Color("MainAccent"))
+                    ScrollView (.vertical) {
                         ForEach(gamesVM.seasons, id: \.self) { season in
                             let i = Int(season) ?? -1
                             ZStack {
-                                Text("\(i)")
+                                Text("Season \(i)")
                                     .font(Font.custom("Avenir Next Bold", size: 30))
                                     .foregroundColor(Color("MainAccent"))
                                     .shadow(color: Color.black.opacity(0.2), radius: 5)
@@ -42,54 +45,95 @@ struct GamePickerView: View {
                             .frame(maxWidth: .infinity)
                             .shadow(color: Color.black.opacity(0.2), radius: 10)
                             .padding(10)
+                            .background(Color.gray.opacity(self.selectedSeason == i ? 1 : 0.3))
+                            .cornerRadius(5)
+                            .id(UUID())
                             .onTapGesture {
                                 self.gamesVM.getEpisodes(seasonID: String(i), isSelected: self.selectedSeason == i)
                                 selectedSeason = i
                                 self.gamesVM.setSeason(season: season)
                             }
-                            .background(Color.gray.opacity(self.selectedSeason == i ? 1 : 0.3))
-                            .clipShape(Circle())
-                            .id(UUID())
                         }
                     }
-                    
-                    let episodeColumnGrid = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
-                    Text("Episodes (\(self.gamesVM.episodes.count))")
-                        .font(Font.custom("Avenir Next Bold", size: 50))
-                        .padding(.horizontal)
-                    LazyVGrid(columns: episodeColumnGrid) {
-                        ForEach(gamesVM.episodes, id: \.self) { episode in
-                            let episode_index = Int(episode) ?? -1
-                            ZStack {
-                                Color(self.selectedEpisode == episode_index ? "Darkened" : "MainFG")
-                                Text("\(episode_index)")
-                                    .font(Font.custom("Avenir Next Bold", size: 50))
-                                    .foregroundColor(Color("MainAccent"))
-                                    .shadow(color: Color.black.opacity(0.2), radius: 5)
-                                    .multilineTextAlignment(.center)
+                    .frame(width: UIScreen.main.bounds.width * 0.3)
+                }
+                Rectangle()
+                    .frame(width: 1)
+                    .padding()
+                VStack (alignment: .leading) {
+                    VStack (alignment: .leading) {
+                        Text("Jeopardy Round Categories")
+                            .font(Font.custom("Avenir Next Bold", size: 20))
+                        HStack {
+                            ForEach(gamesVM.jeopardyCategories, id: \.self) { category in
+                                ZStack {
+                                    Color("MainFG")
+                                    Text(category.uppercased())
+                                        .font(Font.custom("Avenir Next Bold", size: 15))
+                                        .foregroundColor(Color.white)
+                                        .shadow(color: Color.black.opacity(0.2), radius: 5)
+                                        .multilineTextAlignment(.center)
+                                        .padding(.horizontal, 10)
+                                        .frame(maxWidth: .infinity)
+                                }
+                                .cornerRadius(5)
+                                .padding(2)
                             }
-                            .frame(maxWidth: .infinity)
-                            .cornerRadius(5)
-                            .shadow(color: Color.black.opacity(0.2), radius: 10)
-                            .padding(3)
-                            .onTapGesture {
-                                self.selectedEpisode = episode_index
-                                self.gamesVM.getEpisodeData(seasonID: String(self.selectedSeason), episodeID: String(episode))
-                                self.gamesVM.setEpisode(ep: episode)
-                                self.participantsVM.resetScores()
-                                self.trackerVM.resetGame()
+                        }
+                        Text("Double Jeopardy Round Categories")
+                            .font(Font.custom("Avenir Next Bold", size: 20))
+                        HStack {
+                            ForEach(gamesVM.doubleJeopardyCategories, id: \.self) { category in
+                                ZStack {
+                                    Color("MainFG")
+                                    Text(category.uppercased())
+                                        .font(Font.custom("Avenir Next Bold", size: 15))
+                                        .foregroundColor(Color.white)
+                                        .shadow(color: Color.black.opacity(0.2), radius: 5)
+                                        .multilineTextAlignment(.center)
+                                        .padding(.horizontal, 10)
+                                        .frame(maxWidth: .infinity)
+                                }
+                                .cornerRadius(5)
+                                .padding(2)
                             }
-                            .padding(5)
-                            .id(UUID())
+                        }
+                    }
+                    .frame(height: 300)
+                    Text("Episodes")
+                        .font(Font.custom("Avenir Next Bold", size: 30))
+                    ScrollView (.vertical) {
+                        LazyVGrid(columns: episodeColumnGrid) {
+                            ForEach(gamesVM.episodes, id: \.self) { episode in
+                                let episode_index = Int(episode) ?? -1
+                                ZStack {
+                                    Color(self.selectedEpisode == episode_index ? "Darkened" : "MainFG")
+                                    Text("\(episode_index)")
+                                        .font(Font.custom("Avenir Next Bold", size: 25))
+                                        .foregroundColor(Color("MainAccent"))
+                                        .shadow(color: Color.black.opacity(0.2), radius: 5)
+                                        .multilineTextAlignment(.center)
+                                }
+                                .frame(maxWidth: .infinity)
+                                .cornerRadius(5)
+                                .shadow(color: Color.black.opacity(0.2), radius: 10)
+                                .onTapGesture {
+                                    self.selectedEpisode = episode_index
+                                    self.gamesVM.getEpisodeData(seasonID: String(self.selectedSeason), episodeID: String(episode))
+                                    self.gamesVM.setEpisode(ep: episode)
+                                    self.participantsVM.resetScores()
+                                    self.trackerVM.resetGame()
+                                }
+                                .padding(5)
+                                .id(UUID())
+                            }
                         }
                     }
                 }
-                .padding(25)
             }
+            .padding(25)
         }
         .onAppear {
-            self.selectedSeason = Int(self.gamesVM.selectedSeason) ?? -1
-            self.selectedEpisode = Int(self.gamesVM.selectedEpisode) ?? -1
             playSounds("Jeopardy-theme-song.mp3")
         }
     }

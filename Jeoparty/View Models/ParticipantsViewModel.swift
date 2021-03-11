@@ -71,6 +71,8 @@ class ParticipantsViewModel: ObservableObject {
         for i in 0..<teams.count {
             teams[i].editScore(amount: -teams[i].score)
             wagers[i] = ""
+            toSubtracts[i] = false
+            fjCorrects[i] = false
             finalJeopardyAnswers[i] = ""
         }
     }
